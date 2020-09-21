@@ -17,12 +17,6 @@ FROM node:14.11.0-alpine3.11
 
 WORKDIR /app
 
-#  asasdCOPY internals/scripts ./internals/scripts
-# COPY package.json /app
-# COPY yarn.lock /app
-# COPY build /app/build
-# COPY server /app/server
-
 COPY --from=builder /app/build .
 COPY --from=builder /app/package.json .
 
