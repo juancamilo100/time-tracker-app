@@ -1,4 +1,4 @@
-FROM node:12 AS builder
+FROM node:14.11.0-alpine3.11 AS builder
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ RUN npm run build
 
 # -------------
 
-FROM node:12-slim
+FROM node:14.11.0-alpine3.11
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
